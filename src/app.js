@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Layout from 'r-cmui/components/Layout';
 import Sider from 'r-cmui/components/Layout/Sider';
 import Nav from './Nav';
