@@ -108,7 +108,6 @@ if (
         appIndexJs: resolveOwn('template/examples/index.js'),
         appPackageJson: resolveOwn('package.json'),
         appSrc: resolveOwn('template/src'),
-        appExample: resolveApp('examples'),
         yarnLockFile: resolveOwn('template/yarn.lock'),
         testsSetup: resolveOwn('template/src/setupTests.js'),
         appNodeModules: resolveOwn('node_modules'),

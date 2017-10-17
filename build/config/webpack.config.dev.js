@@ -23,7 +23,6 @@ const getClientEnvironment = require('./env');
 const paths = require('./paths');
 const alias = require('./alias');
 const utils = require('./utils');
-const WebpackMd5Hash = require('webpack-md5-hash');
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // In development, we always serve from the root. This makes config easier.
@@ -66,7 +65,7 @@ let config = {
             // Finally, this is your app's code:
             paths.appIndexJs],
         lib: ['react', 'react-dom',
-            'react-router', 'moment', 'react-transition-group',
+            'moment', 'react-transition-group',
             'immutability-helper',
             'babel-polyfill', 'store', 'immutable'
         ]
@@ -270,8 +269,6 @@ let config = {
         new webpack.optimize.CommonsChunkPlugin({
             names: ['lib', 'manifest']
         }),
-
-        new WebpackMd5Hash(),
         // Makes some environment variables available to the JS code, for example:
         // if (process.env.NODE_ENV === 'development') { ... }. See `./env.js`.
         new webpack.DefinePlugin(env.stringified),
@@ -312,6 +309,7 @@ let config = {
         fs: 'empty',
         net: 'empty',
         tls: 'empty',
+        child_process: 'empty',
     },
     // Turn off performance hints during development because we don't do any
     // splitting or minification in interest of speed. These warnings become
