@@ -6,13 +6,14 @@ import Nav from './Nav';
 import Dom from 'r-cmui/components/utils/Dom';
 const {Header, Content} = Layout;
 
-class App extends React.Component{
-    gotoPage = (item)=>{
-        let desktop = Dom.dom(ReactDOM.findDOMNode(this.refs.desktop));
+class App extends React.Component {
+    displayName = 'App';
+    gotoPage = (item) => {
+        const desktop = Dom.dom(this.refs.desktop);
         desktop.attr('src', item.props.href);
     }
 
-    render(){
+    render () {
         return (
             <Layout className="app">
                 <Header>
